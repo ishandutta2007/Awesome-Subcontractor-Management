@@ -110,7 +110,7 @@ Dedicated open-source subcontractor-management platforms are rarer than commerci
 
 *Sorted by GitHub Star Counts (Descending)*
 
-| Rank | Open-Source Repository | Stars | Primary Domain / Capabilities |
+| Rank | Open-Source Repository | Github_Stars | Primary Domain / Capabilities |
 | :---: | :--- | :---: | :--- |
 | **01** | **[Odoo Subcontracting & Construction](https://github.com/odoo/odoo)** | [![Stars](https://img.shields.io/github/stars/odoo/odoo?style=social&color=white)](https://github.com/odoo/odoo/stargazers) | Comprehensive open-source ERP with native Subcontracting MRP, Purchase Requisitions, Vendor Portals, Project Costing, and Field Service management. |
 | **02** | **[ERPNext / Frappe Construction](https://github.com/frappe/erpnext)** | [![Stars](https://img.shields.io/github/stars/frappe/erpnext?style=social&color=white)](https://github.com/frappe/erpnext/stargazers) | Full-scale open-source ERP featuring dedicated Subcontracting Orders, Subcontracted BOMs, Construction Project Management, RFQ comparisons, and Timesheets. |
