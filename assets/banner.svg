@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#070a11" />
+    </linearGradient>
+
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="subtleGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1" />
+      <circle cx="40" cy="40" r="1" fill="rgba(56, 189, 248, 0.2)" />
+    </pattern>
+
+    <!-- Animations -->
+    <style>
+      @keyframes pulse {
+        0%, 100% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 0.7; transform: scale(1.08); }
+      }
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-10px) rotate(2deg); }
+      }
+      @keyframes floatFast {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); }
+      }
+      @keyframes dashMove {
+        to { stroke-dashoffset: -100; }
+      }
+      @keyframes shimmer {
+        0% { stop-color: #38bdf8; }
+        50% { stop-color: #ec4899; }
+        100% { stop-color: #38bdf8; }
+      }
+      .animated-pulse {
+        animation: pulse 6s ease-in-out infinite;
+        transform-origin: center;
+      }
+      .animated-float {
+        animation: floatSlow 5s ease-in-out infinite;
+        transform-origin: center;
+      }
+      .animated-dash {
+        stroke-dasharray: 8 6;
+        animation: dashMove 20s linear infinite;
+      }
+      .node-orbit {
+        animation: floatFast 4s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="360" fill="url(#bgGrad)" rx="16" />
+  <rect width="1200" height="360" fill="url(#grid)" rx="16" />
+
+  <!-- Ambient Glow Orbs -->
+  <circle cx="200" cy="100" r="160" fill="#3b82f6" opacity="0.15" filter="url(#glow)" class="animated-pulse" />
+  <circle cx="1000" cy="260" r="180" fill="#8b5cf6" opacity="0.15" filter="url(#glow)" class="animated-pulse" style="animation-delay: -3s;" />
+  <circle cx="600" cy="180" r="120" fill="#06b6d4" opacity="0.08" filter="url(#glow)" />
+
+  <!-- Abstract Blueprint / Procurement Network Graphics -->
+  <g class="animated-dash" opacity="0.4">
+    <!-- Connecting Workflow Lines -->
+    <path d="M 120 180 Q 300 80 500 180 T 900 180 T 1080 180" fill="none" stroke="#38bdf8" stroke-width="2" />
+    <path d="M 150 240 Q 400 300 650 200 T 1050 120" fill="none" stroke="#818cf8" stroke-width="1.5" />
+    <path d="M 250 80 C 450 40 750 320 950 280" fill="none" stroke="#c084fc" stroke-width="1.5" />
+  </g>
+
+  <!-- Tech Nodes (Floating Cards) -->
+  <!-- Left Node: Prequalification -->
+  <g class="animated-float" style="animation-delay: -1s;">
+    <rect x="80" y="80" width="160" height="60" rx="10" fill="rgba(17, 24, 39, 0.85)" stroke="#38bdf8" stroke-width="1.2" filter="url(#subtleGlow)" />
+    <circle cx="105" cy="110" r="14" fill="rgba(56, 189, 248, 0.2)" stroke="#38bdf8" stroke-width="1.5" />
+    <path d="M 100 110 L 104 114 L 112 106" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" />
+    <text x="128" y="106" fill="#f3f4f6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700">1Form &amp; Risk</text>
+    <text x="128" y="122" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10">Prequalification</text>
+  </g>
+
+  <!-- Left Bottom Node: Bid Solicitation -->
+  <g class="animated-float" style="animation-delay: -3.5s;">
+    <rect x="120" y="220" width="160" height="60" rx="10" fill="rgba(17, 24, 39, 0.85)" stroke="#818cf8" stroke-width="1.2" filter="url(#subtleGlow)" />
+    <circle cx="145" cy="250" r="14" fill="rgba(129, 140, 248, 0.2)" stroke="#818cf8" stroke-width="1.5" />
+    <path d="M 140 246 H 150 M 140 250 H 148 M 140 254 H 146" fill="none" stroke="#818cf8" stroke-width="2" stroke-linecap="round" />
+    <text x="168" y="246" fill="#f3f4f6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700">Bid Leveling</text>
+    <text x="168" y="262" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10">ITB Management</text>
+  </g>
+
+  <!-- Right Node: Compliance & Lien Waivers -->
+  <g class="animated-float" style="animation-delay: -2s;">
+    <rect x="960" y="70" width="160" height="60" rx="10" fill="rgba(17, 24, 39, 0.85)" stroke="#c084fc" stroke-width="1.2" filter="url(#subtleGlow)" />
+    <circle cx="985" cy="100" r="14" fill="rgba(192, 132, 252, 0.2)" stroke="#c084fc" stroke-width="1.5" />
+    <path d="M 985 93 V 107 M 978 100 H 992" fill="none" stroke="#c084fc" stroke-width="2" stroke-linecap="round" />
+    <text x="1008" y="96" fill="#f3f4f6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700">Compliance</text>
+    <text x="1008" y="112" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10">Lien Waivers &amp; Pay</text>
+  </g>
+
+  <!-- Right Bottom Node: Open Source / ERP -->
+  <g class="animated-float" style="animation-delay: -4s;">
+    <rect x="920" y="210" width="180" height="60" rx="10" fill="rgba(17, 24, 39, 0.85)" stroke="#34d399" stroke-width="1.2" filter="url(#subtleGlow)" />
+    <circle cx="945" cy="240" r="14" fill="rgba(52, 211, 153, 0.2)" stroke="#34d399" stroke-width="1.5" />
+    <path d="M 940 240 L 945 245 L 951 235" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" />
+    <text x="968" y="236" fill="#f3f4f6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700">Open-Source Core</text>
+    <text x="968" y="252" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10">ERP, BOQ &amp; Takeoff</text>
+  </g>
+
+  <!-- Main Center Header Content -->
+  <g text-anchor="middle">
+    <!-- Top Pill Badge -->
+    <g>
+      <rect x="470" y="45" width="260" height="28" rx="14" fill="rgba(56, 189, 248, 0.12)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1" />
+      <text x="600" y="64" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">🏗️ CONSTRUCTION TECH ECOSYSTEM</text>
+    </g>
+
+    <!-- Main Title with Gradient Glow -->
+    <text x="600" y="145" fill="url(#accentGrad)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="42" font-weight="900" letter-spacing="-0.5" filter="url(#glow)">Awesome Subcontractor Management</text>
+    <text x="600" y="145" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="42" font-weight="900" letter-spacing="-0.5">Awesome Subcontractor Management</text>
+
+    <!-- Subtitle / Value Proposition -->
+    <text x="600" y="195" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="500">
+      Curated Stack of SaaS Platforms, Preconstruction Networks &amp; Open-Source ERP Tools
+    </text>
+
+    <!-- Feature Tags -->
+    <g transform="translate(0, 235)">
+      <!-- Tag 1 -->
+      <rect x="330" y="0" width="150" height="32" rx="16" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+      <text x="405" y="21" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">🛡️ Risk &amp; Prequal</text>
+
+      <!-- Tag 2 -->
+      <rect x="495" y="0" width="130" height="32" rx="16" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+      <text x="560" y="21" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">📊 Bid Leveling</text>
+
+      <!-- Tag 3 -->
+      <rect x="640" y="0" width="140" height="32" rx="16" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+      <text x="710" y="21" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">⚡ Open Source</text>
+    </g>
+
+    <!-- Footer Stats / Live Metrics -->
+    <text x="600" y="318" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">
+      Commercial SaaS Comparison • Pricing &amp; Free Tiers • Open-Source Procurement Stacks
+    </text>
+  </g>
+
+  <!-- Border Outline Gradient -->
+  <rect width="1200" height="360" fill="none" stroke="url(#accentGrad)" stroke-width="1.5" rx="16" opacity="0.4" />
+</svg>
